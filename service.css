@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gold:goldenrod;
+    --green:rgb(36, 189, 36);
+    --brown:rgb(163, 76, 35);
+    --grey:grey;
+    --lg:lightgrey;
+    --white:white;
+    --black:black;
+}
+
+.aimg{
+    height: 22vh;
+    position: relative;
+    background: url(aboutimg.jpg);
+    /* filter: brightness(70%); */
+    text-align: center;
+}
+.aimg>h1{
+    letter-spacing: 10px;
+    color: white;
+    font-size: 50px;
+    padding-top: 65px;
+}
+
+/* Why People Choose */
+.wpc{
+    padding: 40px;
+    background-color: lightgoldenrodyellow;
+}
+.wpcbox{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    box-shadow: 0 4px 3px 0px rgba(0, 0, 0, 0.2),0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+.wpcbox>img{
+    width: 30%;
+    height: 200px;
+}
+.wpcbox>video{
+    width: 30%;
+    height: 240px;
+    border-radius: 20px;
+}
+.wpcbox>div{
+    width: 60%;
+}
+.wpcbox>div>h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: var(--brown);
+    font-style: italic;
+    animation:wpch 4s infinite  alternate;
+}
+@keyframes wpch{
+    25%{ color:var(--brown)}
+    50%{ color:var(--gold) }
+    75%{ color:var(--grey) }
+    100%{ color:maroon}
+}
+.wpcbox>div>p{
+    font-size: 23px;
+    text-align: justify;
+    line-height: 40px;
+}
+
+
+@media only screen and (max-width:1000px){
+    .wpc{
+        padding: 20px;
+    }
+    .wbc2,.wbc4{
+        flex-direction: column;
+    }
+    .wbc1,.wbc3{
+        flex-direction: column-reverse;
+    }
+    .wpcbox{
+        padding: 20px;
+        gap: 20px;
+    }
+    .wpcbox>div{
+        width: 100%;
+    }
+    .wpcbox>video{
+        width: 100%;
+    }
+    .wpcbox>div>p{
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .wpcbox>div>h1{
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
+    .aimg>h1{
+        padding-top: 60px;
+    }
+}
+/* mobile view */
+@media only screen and (max-width:500px){
+    .wpc{
+        padding: 10px;
+    }
+    .wpcbox>div>p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .wpcbox>div>h1{
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+    .wpcbox{
+        padding: 20px;
+        gap: 0;
+    }
+    .aimg>h1{
+        font-size: 40px;
+    }
+    .aimg>h1{
+        padding-top: 65px;
+    }
+}

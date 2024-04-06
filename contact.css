@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gold:goldenrod;
+    --green:rgb(36, 189, 36);
+    --brown:rgb(163, 76, 35);
+    --grey:grey;
+    --lg:lightgrey;
+    --white:white;
+    --black:black;
+}
+
+.aimg{
+    height: 22vh;
+    position: relative;
+    background: url(aboutimg.jpg);
+    text-align: center;
+}
+.aimg>h1{
+    letter-spacing: 10px;
+    color: white;
+    font-size: 50px;
+    padding-top: 65px;
+}
+/* contact Page */
+.cpage>h1{
+    text-align: center;
+    padding: 30px 0;
+    font-size: 40px;
+    font-style: italic;
+    color: var(--brown);
+}
+.cpage>.ltc{
+    border: 1px solid grey;
+}
+.cform{
+    margin: 40px;
+    background: url(cphoto.jpg);
+    background-size: 100% 100%;
+    padding: 20px;
+}
+.cform>h1{
+    font-size: 25px;
+    padding-bottom: 10px;
+    color: var(--brown)
+}
+form{
+    width: 45%;
+}
+form>input,textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    outline: none;
+}
+.cpagebtn{
+    background-color: var(--brown);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    transition: 2s;
+
+}
+.cpagebtn:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:1000px){
+    .aimg>h1{
+        padding-top: 60px;
+    }
+    .cform{
+        margin: 20px;
+    }
+    .cpage>h1{
+        padding: 30px 0;
+        font-size: 25px;
+    }
+    .cform>h1{
+        font-size: 22px;
+    }
+    form{
+        width: 50%;
+    }
+}
+/* mobile view */
+@media only screen and (max-width:500px){
+    .aimg>h1{
+        padding-top: 65px;
+        font-size: 40px;
+    }
+    .cform{
+        margin: 10px 5px;
+        padding: 5px;
+        background-image: none;
+    }
+    .cpage>h1{
+        padding: 20px 10px;
+        font-size: 22px;
+    }
+    .cform>h1{
+        font-size: 20px;
+    }
+    form{
+        width: 100%;
+    }
+    form>input,textarea{
+        padding: 7px;
+        margin: 5px 0;
+    }
+}

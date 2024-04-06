@@ -1,0 +1,819 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* My website standard colors use ROOT */
+:root{
+    --gold:goldenrod;
+    --green:rgb(36, 189, 36);
+    --brown:rgb(163, 76, 35);
+    --grey:grey;
+    --lg:lightgrey;
+    --white:white;
+    --black:black;
+}
+/* Button style */
+.abtn{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--gold);
+    transition: 0.5s;
+    font-weight: bold;
+}
+.abtn:hover{
+    background-color: var(--green);
+    cursor: pointer;
+}
+.container{
+    overflow-x: hidden;
+    /* min-height: 5000px; */
+}
+
+/* Header with navbar */
+header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color:rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    position: fixed;
+    z-index: 999;
+}
+.shopname{
+    font-size: 25px;
+    color: var(--green);
+}
+
+/* Nav Bar */
+nav>a{
+    text-decoration: none;
+    color: var(--white);
+    margin: 0 20px;
+    font-size: 20px;
+    transition: color 0.4s linear;
+    position: relative;
+}
+nav>a:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom:2px solid var(--gold);
+    transition:0.3s;
+    transform: scaleX(0);
+}
+nav>a:hover::before{
+    transform: scaleX(1);
+}
+nav{
+    padding-right: 30px;
+}
+
+/* Home Video */
+.homevideo{
+    height: 100vh;
+    position: relative;
+}
+.hvideo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+/* Home Content */
+.homecontent{
+    position: absolute;
+    top: 30%;
+    color: var(--white);
+    text-align: center;
+    width: 100%;
+    padding:0 20px;
+    animation: hc 1s;
+}
+@keyframes hc{
+    0%{
+        top:-100%;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+    }
+}
+.homecontent>h1{
+    font-size: 50px;
+    color: var(--gold);
+    font-family: "Spirax", system-ui;
+}
+.homecontent>p{
+    font-size: 23px;
+    padding:30px 20px 40px;
+    
+}
+
+/*-------------- About Us & Welcome--------------*/
+.welcome{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 40px 20px;
+    background-color:rgb(229, 240, 243);
+}
+.wc{
+    width: 60%;
+}
+.wc>h2,.wc>h1>i{
+    color: var(--gold);
+}
+.wc>h1{
+    font-size: 25px;
+    padding: 10px 0;
+}
+.wc>p{
+    font-size: 20px;
+    text-align: inherit;
+    padding: 10px 0;
+}
+
+/* Welcome image */
+.wi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wi1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.wi2{
+    display: inline-block;
+    position: relative;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    background-color: white;
+    background: url(b1.jpeg);
+    background-size: 100% 100%;
+    margin: auto;
+    z-index: 1
+}
+.wi1::after{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 50%;
+    background: linear-gradient(goldenrod,green,brown);
+    overflow: hidden;
+    animation: rotate infinite 1s;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.wi{
+    width: 30%;
+    position: relative;
+    height: 400px;
+}
+.exp{
+    display: flex;
+    gap: 30px;
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+.exp>p{
+    border-left: 5px solid var(--gold);
+    padding: 3px 10px;
+}
+
+.exp>p>.num{
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 30px;
+}
+.exp>p>span+span{
+    color: var(--grey);
+    font-size: 22px;
+}
+
+/* ---------------pulse----------------- */
+.pulse{
+    min-height: 250px;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: url(pul.png);
+    background-size: 100% 100%;
+
+}
+.round{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    transition: 1s;
+    background-color: var(--gold);
+    padding: 5px;
+}
+.round>p{
+    display: none;
+    font-size: 10px;
+}
+.round:hover{
+    transform: scale(1.5);
+}
+.round:hover p{
+    display: block;
+    animation:roundp 1s;
+}
+@keyframes  roundp{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.round::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--gold);
+    animation: pulse_effect 2s infinite;
+}
+.round::before{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--gold);
+    animation: pulse_effect 1.5s infinite;
+}
+
+@keyframes pulse_effect{
+    0%{
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    50%{
+        opacity: 0.8;
+        transform: scale(1.3);
+    }
+    100%{
+        opacity: 0.2;
+        transform: scale(1.5);
+    }
+}
+
+
+/*--------- Location + Time + Contact ----------*/
+.ltc{
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ltcbox{
+    width: 250px;
+    height: 170px;
+    background: black;
+    float: left;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+.ltcicon{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: goldenrod;
+    transition: 0.5s;
+    z-index: 1;
+}
+.ltcbox>.ltcicon>i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+}
+
+.ltcbox:hover .ltcicon{
+    top: 10px;
+    left: 95px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.ltccontent{
+    padding-top: 30px;
+}
+.ltccontent>h2{
+    padding-bottom: 8px;
+}
+
+/*--------- Marque Tag ----------------------*/
+.offerbox{
+    background-color: var(--brown);
+    padding:5px 0;
+}
+.offer>span{
+    color: yellow;
+    font-weight: bold;
+    font-style: oblique;
+}
+.offer{
+    font-size: 25px;
+    color: white;
+}
+
+/*----------- Deals of The Day ------------*/
+.dod{
+    padding:40px;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.dod1>h2{
+    font-size: 50px;
+}
+.dod1>h1{
+    font-size: 30px;
+    padding: 20px 0 30px;
+}
+.dod1>h2>span,.dod1>h1>span{
+    color: red;
+}
+.dod>img{
+    width: 40%;
+    height: 300px;
+    animation: dodimg 1s infinite alternate;
+}
+@keyframes dodimg{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+
+/* ------ Why ----- */
+.why{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    text-align: center;
+}
+.why>div{
+    display: flex;
+    width: 47%;
+    justify-content: space-between;
+}
+.whybox{
+    width: 47%;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    background-color:rgb(172, 240, 172) ;
+    border-radius: 10px;
+    padding:10px;
+    transition: 1s;
+}
+.whybox:hover{
+    background-color:rgb(213, 189, 127) ;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.whybox>h1>i{
+    font-size: 30px;
+}
+.whybox>h2{
+    padding: 10px 0;
+    color: var(--brown);
+}
+.whybox>p{
+    color: rgb(85, 85, 85);
+}
+
+/*----------- Recervation Online Booking ------------*/
+.reservation{
+    display: flex;
+    padding: 40px;
+    justify-content: space-around;
+    background-color: rgb(241, 212, 154);
+}
+.reservation>.rimg{
+    width: 50%;
+    border-radius: 10px;
+    height: 450px;
+    background: url(table.jpg);
+    animation: rimg 20s infinite;
+}
+@keyframes rimg{
+    25%{
+        background: url(table2.jpg);
+    }
+    50%{
+        background: url(table3.jpg);
+    }
+    75%{
+        background: url(table4.jpg);
+    }
+    100%{
+        background: url(table5.jpg);
+    }
+}
+.rob{
+    width: 40%;
+    text-align: center;
+}
+.rob>p{
+    font-size: 40px;
+    font-style: italic;
+    color: var(--brown);
+    font-weight: bold;
+    padding-bottom: 10px;
+    letter-spacing: 10px;
+}
+.rob>form>input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    outline: none;
+}
+.rob>form>button{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--brown);
+    background-color:var(--brown) ;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 1s;
+}
+
+.rob>form>button:hover{
+    background-color: var(--green);
+    cursor:pointer
+}
+
+
+/*---------------- Review --------------------*/
+.revcon{
+    padding: 40px; 
+    background-color: rgb(204, 233, 224);
+    text-align: center;
+
+}
+.revcon>p{
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 22px;
+    padding:5px 0 30px;
+
+}
+.rbox{
+    background-color: whitesmoke;
+    margin:20px auto;
+    width: 40%;
+    padding: 30px 10px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 5px 4px rgba(0, 0, 0, 0.2), 3px 6px 5px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: reveffect 0.1s alternate;
+}
+.stars{
+    color: var(--gold);
+    padding: 10px 0;
+}
+.rbox1,.rbox3{
+    animation: reveffect13 2s alternate;
+}
+.rbox2,.rbox4{
+    animation: reveffect24 2s alternate;
+}
+@keyframes reveffect13{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0%;
+    }
+}
+@keyframes reveffect24{
+    from{
+        left: -50%;
+    }
+    to{
+        left: 0%;
+    }
+}
+.rbox>img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.rbox2,.rbox3,.rbox4{
+    display: none;
+}
+#r2:checked~.rbox1,#r3:checked~.rbox1,#r4:checked~.rbox1{
+    display: none;
+}
+#r2:checked~.rbox2,#r3:checked~.rbox3,#r4:checked~.rbox4{
+    display: block;
+}
+
+/* ---------------FOOTER---------------- */
+footer{
+    background-color: rgb(104, 22, 22);
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+footer>div{
+    width: 47%;
+    display: flex;
+    justify-content: space-around;
+}
+.fbox{
+    width: 47%;
+}
+.fbox>h3{
+    border-bottom: 2px solid white;
+    display: inline-block;
+}
+.fbox>div{
+    padding: 10px 0;
+}
+.fbox>div>p{
+    padding: 10px 0;
+}
+
+.fbox>div>p>a{
+    color: var(--white);
+    text-decoration: none;
+}
+.fbox>div>p>a:hover{
+    font-size: 18px;
+    color: yellow;
+}
+.fmap>iframe{
+    border-radius: 10px;
+    width: 100%;
+    height: 180px;
+}
+
+/* Tab & mobile */
+.bar{
+    opacity: 0;
+}
+.checkbox{
+    display: none;
+}
+.checkbox:checked~nav{
+    background-color: var(--brown);
+    left: 0;
+}
+@media only screen and (max-width:800px){
+    header{
+        background-color:rgba(0, 0, 0, 1);
+    }
+    nav,.welcome,.why,.reservation,.review,footer,.dod{
+        flex-direction: column;
+    }
+    nav,header,.wc,.why>div,.reservation>.rimg,.rob,.review>div,footer>div{
+        width: 100%;
+    }
+    nav{
+        position: fixed;
+        top: 58px;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        display: flex; 
+        align-items: center;
+        justify-content: start;
+        gap: 50px;
+        padding-top: 40px;
+        padding-right: 0;
+        transition: 1s;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .bar{
+        opacity: 1;
+    }
+    header>input{
+        display: none;
+    }
+    /* welcome */
+    .welcome{
+        align-items: center;
+    }
+}   
+
+
+@media only screen and (min-width:800px) and (max-width:1000px){
+    .homecontent>h1{
+        font-size: 40px;
+    }
+    .homecontent>p{
+        font-size: 20px;
+    }
+    nav{
+        padding-right: 10px;
+    }
+    .rbox{
+        width: 80%;
+    }
+
+}
+
+/*-------------- Tab View -------------------*/
+@media only screen and (min-width:500px) and (max-width:800px){
+    .welcome,.ltc,.why,.reservation,.dod{
+        padding: 20px;
+    }
+    .why,.reservation,.review,footer,.dod{
+        gap: 30px;
+    }
+    .homecontent>h1{
+        font-size: 32px;
+    }
+    .homecontent>p{
+        font-size: 17px;
+    }
+    .wi{
+        width: 400px;
+        height: 400px;
+    }
+    .wc>h1{
+        font-size: 30px;
+    }
+    .wc>p{
+        font-size: 18px;
+    }
+    .ltcbox>h2{
+        font-size: 20px;
+    }
+    .reservation>.rimg{
+        height: 300px;
+    }
+    .fbox{
+        width: 40%;
+    }
+    .dod>img{
+        width: 300px;
+    }
+    .rbox{
+        width: 80%;
+    }
+    /* ltc box */
+    .ltcbox{
+        width: 150px;
+        height: 150px;
+    }
+    .ltcbox:hover .ltcicon{
+        top: 5px;
+        left: 50px;
+        width: 60px;
+        height: 60px;
+    }
+    .ltccontent>h2{
+        font-size: 18px;
+    }
+}
+
+/* Mobile View */
+@media only screen and (min-width:0px) and (max-width:500px){
+    nav{
+        top: 50px;
+    }
+    .exp,.why>div,.ltc,.review>div,footer>div{
+        flex-direction: column;
+    }
+    .welcome,.ltc,.why,.reservation,.dod,.revcon,footer{
+        padding:15px;
+    }
+    .whybox,.revbox,.fbox{
+        width: 90%;
+        margin: auto;
+    }
+    .why,.reservation,.review,footer,.dod,.why>div,.ltc,.review>div{
+        gap: 30px;
+    }
+    .homecontent{
+        padding:0 25px;
+    }
+    .homecontent>h1{
+        font-size: 25px;
+    }
+    .homecontent>p{
+        font-size: 15px;
+    }
+    .shopname{
+        font-size: 20px;
+    }
+    .wi{
+        width: 250px;
+        height: 250px;
+    }
+    .wi1{
+        width: 200px;
+        height: 200px;
+    }
+    .wc>h1{
+        font-size: 23px;
+        padding: 7px 0;
+    }
+    .wc>p{
+        font-size: 17px;
+        padding: 5px 0;
+        text-align: justify;
+    }
+    .exp>p{
+        font-size: 18px;
+    }
+    .ltcbox{
+        margin: auto;
+    }
+    .dod1>h2{
+        font-size: 32px;
+    }
+    .dod1>h1,.offer,.rob>h1{
+        font-size: 22px;
+    }
+    .dod>img{
+        width: 200px;
+        height: 250px;
+    }
+    .reservation>.rimg{
+        height: 250px;
+    }
+    .rob>p{
+        font-size: 37px;
+        letter-spacing: 5px;
+    }
+    .fbox>h3{
+        display: block;
+    }
+    .fmap{
+        height: 200px;
+    }
+    .rbox{
+        width: 100%;
+    }
+    .pulse{
+        padding: 50px 0;
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+
+
+
+

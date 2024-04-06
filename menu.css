@@ -1,0 +1,176 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gold:goldenrod;
+    --green:rgb(36, 189, 36);
+    --brown:rgb(163, 76, 35);
+    --grey:grey;
+    --lg:lightgrey;
+    --white:white;
+    --black:black;
+}
+
+.aimg{
+    height: 22vh;
+    position: relative;
+    background: url(aboutimg.jpg);
+    text-align: center;
+}
+.aimg>h1{
+    letter-spacing: 10px;
+    color: white;
+    font-size: 50px;
+    padding-top: 65px;
+}
+/* ----------------------- MENU CARD --------------------*/
+.menucard{
+    margin: 30px 0;
+    text-align: center;
+}
+.teaname,.coffeename,.burgername,.pizzaname{
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.teaname:hover,.coffeename:hover,.burgername:hover,.pizzaname:hover{
+    cursor: pointer;
+    border-color: green;
+}
+#tea:checked+.teaname,#coffee:checked+.coffeename,#burger:checked+.burgername,#pizza:checked+.pizzaname{
+    color: black;
+    border-color:goldenrod;
+    cursor: pointer; 
+}
+.menucard>input{
+    display: none;
+}
+
+/*-------- Imagess -------*/
+.mbox>img{
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+.mbox{
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding:10px 10px 20px;
+}
+.abtn{
+    padding: 8px 20px;
+}
+.mbox>h2{
+    padding-top: 10px;
+}
+.mbox>p{
+    padding: 5px 0;
+    font-size: 20px;
+}
+.menucard>label{
+    display: inline-block;
+    padding:0 20px;
+}
+.coffeelist,.tealist,.burgerlist,.pizzalist{
+    display: flex;
+    margin-top: 20px;
+}
+.coffeelist>div,.tealist>div,.burgerlist>div,.pizzalist>div{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+
+.tealist,.coffeelist,.burgerlist,.pizzalist{
+    animation: menueffect 1s;
+}
+.tealist,.burgerlist,.pizzalist{
+    display: none;
+}
+@keyframes menueffect{
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+#tea:checked~.coffeelist,#burger:checked~.coffeelist,#pizza:checked~.coffeelist{
+    display: none;
+}
+#tea:checked~.tealist,#burger:checked~.burgerlist,#pizza:checked~.pizzalist{
+    display: flex;
+}
+
+
+@media only screen and (max-width:1000px){
+    .aimg>h1{
+        padding-top: 60px;
+    }
+    .mbox>img{
+        width: 150px;
+        height: 150px;
+    }
+    .abtn{
+        padding: 8px 18px;
+    }
+    .mbox{
+        padding:10px 10px 15px;
+    }
+    .mbox>h2{
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    .mbox>p{
+        padding: 10px 0;
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:700px){
+    .aimg>h1{
+        padding-top: 60px;
+    }
+    .coffeelist,.tealist,.burgerlist,.pizzalist{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .coffeelist>div,.tealist>div,.burgerlist>div,.pizzalist>div{
+        width: 100%;
+    }
+    .mbox>img{
+        width: 180px;
+        height: 180px;
+    }
+}
+/* mobile view */
+@media only screen and (max-width:500px){
+    .aimg>h1{
+        padding-top: 65px;
+        font-size: 35px;
+    }
+    .menucard>label{
+        padding:0 5px;
+    }
+    .mbox>img{
+        width: 130px;
+        height: 130px;
+    }
+    .abtn{
+        padding: 5px 15px;
+    }
+    .mbox{
+        padding:5px 5px 10px;
+    }
+    .mbox>h2{
+        font-size: 18px;
+        padding-top: 7px;
+    }
+    .mbox>p{
+        padding: 5px 0;
+        font-size: 17px;
+    }
+}
